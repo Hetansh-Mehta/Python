@@ -6,7 +6,7 @@
 # in Python 3 you need to import from html.parser
 from html.parser import HTMLParser
 
-metacount = 0;
+metacount = 0
 
 # create a subclass of HTMLParser and override the handler methods
 class MyHTMLParser(HTMLParser):
@@ -59,5 +59,5 @@ def main():
   print ("%d meta tags encountered" % metacount)
 
 if __name__ == "__main__":
-  main();
+  main()
   
