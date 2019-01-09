@@ -29,5 +29,4 @@ def main():
     print (skill.getAttribute("name"))
         
 if __name__ == "__main__":
-  main();
-
+  main()
