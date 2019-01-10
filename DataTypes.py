@@ -241,3 +241,49 @@ print (str8.upper())        #
 print (str9.upper())        # ABCD
 print ("----------------------------")
 
+# Program that reads a line and prints the number of uppercase, lowercase, alphabets and digits 
+def Line_Stats():
+    print ("Inside Line_Stats()")
+    line = input("Enter a line: ")
+    lower_count = upper_count = 0
+    digit_count = alpha_count = 0
+    for a in line:
+        if a.islower():
+            lower_count += 1
+        elif a.isupper():
+            upper_count += 1
+        elif a.isdigit():
+            digit_count += 1
+        if a.isalpha() :
+            alpha_count += 1
+    print ("Number of uppercase letters: ", upper_count)
+    print ("Number of lowercase letters: ", lower_count)
+    print ("Number of alphabets: ", alpha_count)
+    print ("Number of digits: ", digit_count)
+Line_Stats()
+print ("----------------------------")
+
+# Program that reads a line and a substring. It should then display the number of occurrences of the 
+# given substring in the line
+def Substr_Occurances():
+    print ("Inside Substr_Occurances()")
+    line = input("Enter a line: ")
+    sub = input ("Enter substring: ")
+    len_line = len(line)
+    len_sub = len(sub)
+    start = count = 0
+    end = len_line
+    while True:
+        pos = line.find(sub, start, end)
+        if pos != -1:
+            count += 1
+            start = pos + len_sub
+        else:
+            break 
+        if start >= len_line:
+            break 
+    print ("Number of occurances of ", sub, " is: ", count)
+Substr_Occurances()
+print ("----------------------------")
+
+# ========================================================================================================
