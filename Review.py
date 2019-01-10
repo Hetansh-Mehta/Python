@@ -73,16 +73,17 @@ Assignment Operator:
 # Declare a variable and initialize it
 a = 10
 print ("a = ", a)
-
+print ("------------------------------")
 stu = "Hetansh"
 print (stu)
-
+print ("------------------------------")
 # Dynamic Typing: A variable pointing to a value of a certain type, can be made to point to a value/object
 #                 of different type. 
 x = 20
 print ("x = ", x)
 x = "Hello World"
 print ("x after dynamic typing = ", x)
+print ("------------------------------")
 # Run and check output.
 
 # Multiple Assignment of Variables
@@ -90,24 +91,31 @@ e = f = g = 10
 print ("e,f,g = ", e,f,g)
 h,i,j = 10, 20, 30
 print ("h,i,j = ", h,i,j)
+print ("------------------------------")
 # Swapping two variables
 a,e = i,j 
 print ("a after swap: ", a)
 print ("e after swap: ", e)
-
+print ("------------------------------")
 # ERROR: variables of different types cannot be combined
 #print ("string  " + 123)
 print ("string  " + str(123))
+print ("------------------------------")
+
+del a,x,e,f,g,h,i,j 
 
 # Asking the user for integer input
 number1 = int(input("Enter a number: "))
 print ("number1: ", number1)
+print ("------------------------------")
 # Asking the user for float input
 number2 = float(input("Enter a float: "))
 print ("number2: ", number2)
+print ("------------------------------")
 # Asking the user for string input
 string1 = input ("Enter a string: ")
 print ("string1: ", string1)
+print ("------------------------------")
 # ==============================================================================================================
 
 # Functions 
@@ -167,6 +175,7 @@ func1()     #calling func1
 print (func1)   #should return None as it does not return anything in the function definition 
 func2(10,2)
 print (square(4))   #prints the returned value after calculating the sqauare
+print ("------------------------------")
 # ==============================================================================================================
 # Scope of a Variable
 ''' A variable declared in the top level segment of a program is said to have a global scope and is 
@@ -181,6 +190,7 @@ num1 = float(input("Enter first number: "))         # num1, num2 are global vari
 num2 = float(input("Enter second number: "))
 sum = calSum(num1, num2)
 print ("Sum of given numbers is: ", sum)
+print ("------------------------------")
 # ==============================================================================================================
  
 # Conditionals 
@@ -211,6 +221,7 @@ def OddEven(n):
         print ("The next number is: ", n+1)
 n = int(input("Enter a number: "))
 OddEven(n)
+print ("------------------------------")
 
 # Write a progrom to compute tax payable by a person according to his salary. 
 def Tax_Calculator():
@@ -225,6 +236,7 @@ def Tax_Calculator():
         tax = 0.12 * salary
     print ("You must pay: ", tax, " as taxes")
 Tax_Calculator()
+print ("------------------------------")
 
 # Write a function that prints "Buzz" if the number is divisible by 3, "Fizz" if the number is divisible
 # by 5 and "FizzBuzz" if the number is divisible by both. The entered number should be a positive number
@@ -245,10 +257,101 @@ def Divisible(n):
 
 num = int(input("Enter a number: "))
 Divisible(n)
+print ("------------------------------")
 # ==============================================================================================================
 
 # Loops
+''' Python provides two kinds of loops: 
+1) for loop: to represent a counting loop
+2) while loop: tp represent a conditional loop 
+    The block of code under these loop run again and again until a condition is met. '''
 
+# 1) The for loop
+''' Primirarily designed to process the items of any sequence, such as a list or a string, one by one.'''
+
+# Syntax:
+''' for <variable> in <sequence>:
+        statements_to_repeat
+    
+    OR                          
+
+    for <variable> in range(start, stop, step):
+        statements_to_repeat 
+'''
+# Example
+for x in range(5,10):           # x = variable and sequence is the list of numbers 5 <= num < 10. 
+    print (x)                   # Notice that the loop runs till x=9 and terminates when x=10. 
+print ("------------------------------")
+
+# Program to print out even numbers till 10
+for i in range(0,10,2):
+    print (i)
+print ("------------------------------")
+
+# Program to print cubes of numbers in the range 15 to 20
+for i in range(15,21):
+    print("Cube of number: ", i, "is: ", i**3)
+print ("------------------------------")
+
+# use a for loop over a collection
+days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+for d in days:
+    print (d)
+print ("------------------------------")
+
+
+# 2) The while loop
+''' A while loop is a conditional loop that will repeat the instructions within itself as long
+    as a conditional remains true (Boolean True or truth value true).'''
+# Syntax:
+''' while <logicalExpression>:
+        loop-body
+'''
+# Example
+while (x < 5):                  # The loop will run until the condition x<5 remains true.
+    print (x)
+    x = x + 1
+print ("------------------------------")
 # ==============================================================================================================
+
+# Jump Statements - break and continue
+''' The jump statements - break and continue can be used within the loop to jump out of loop iterations. '''
+
+# The break statement
+''' A break statement terminates the rest of the loop and jumps over to the statement following the loop.'''
+
+# Example
+a = b = c = 0
+for i in range(1,21):
+    a = int(input("Enter number 1: "))
+    b = int(input("Enter number 2: "))
+    if b==0:
+        print ("Division by zero error! Aborting")
+        break 
+    else:
+        c = a/b 
+    print ("Quotient: ", c) 
+print ("------------------------------")
+
+# The continue statement
+''' The continue statement skips the rest of the loop statements and causes the next iteration of 
+    the loop to take place. '''
+
+# Example
+for i in "PYTHON":
+    if i== "T":             # When i=T, it skips the loop and jumps to the next iteration and the loop runs
+        continue            # Try this with a break statement and compare the output
+    else:           
+        print (i)
+print ("------------------------------")
+
+# Example of break and continue 
+for x in range(5,20):
+    if (x == 17):                       
+        break
+    if (x % 2 == 0): 
+        continue
+    print (x)
+print ("------------------------------")
 # ==============================================================================================================
-# ==============================================================================================================
+
