@@ -419,4 +419,61 @@ t1.insert(2, "i")       # inserting "i" at index = 2
 print ("List after insert(): ", t1)
 print ("----------------------------")
 
+# The pop method 
+''' The pop() method is used to remove an item from the list.
+Syntax: list.pop(<index>) 
+    index is an optional argument, if no index is specified, pop() removes and returnes 
+    the last item in the list. 
+'''
+print ("list.pop()")
+print ("list1: ", list1)
+list1.pop()
+print ("list1.pop() gives: ", list1)
+list1.pop(0)
+print ("list1.pop(0) gives: ", list1)
+list1.pop(4) 
+print ("list1.pop(4) gives: ", list1)
+print ("----------------------------")
 
+# The remove method 
+''' The remove() method removes the first occurance of given item from the list.
+Syntax: list.remove(<value>)
+'''
+print ("list.remove()")
+list2 = [1,1,2,3,4,4,5,6,1,5,10]
+print ("list2: ", list2)
+list2.remove(1)
+print ("list2.remove(1) gives: ", list2)
+list2.remove(5) 
+print ("list2.remove(5) gives: ", list2)
+
+''' Trying to remove somehting which isn't in the list will obviously, give an error. ''' 
+print ("----------------------------")
+
+# The reverse method
+''' The reverse() reverses the items in the list.
+Syntax: list.reverse() ''' 
+
+print ("list.reverse()")
+print ("list1: ", list1)
+list1.reverse()
+print ("list1.reverse() gives: ", list1)
+print ("list2: ", list2)
+list2.reverse()
+print ("list2.reverse() gives: ", list2)
+print ("----------------------------")
+
+# The sort method 
+''' The sort() function sorts the items in a list, by default in increasing order.
+Syntax: list.sort() '''
+
+print ("list.sort()")
+print ("list1: ", list1)
+list1.sort()
+print ("list1.sort() gives: ", list1)
+''' To sort in descending order, we use: list.sort(reverse = True)
+'''
+print ("list2: ", list2)
+list2.sort(reverse = True)
+print ("list2.sort(reverse = True) gives: ", list2) 
+print ("----------------------------")
