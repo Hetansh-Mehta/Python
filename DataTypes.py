@@ -287,3 +287,136 @@ Substr_Occurances()
 print ("----------------------------")
 
 # ========================================================================================================
+
+# Lists 
+''' A list is a standard data type of Python which that can store sequence of values belonging to any type.
+    The lists are depicted through square brackets, eg, L =[] is an empty list. 
+=> Lists are mutable (modifiable) we can change the elements of a list in place.'''
+
+L = [] # L = list() is an alternative     # This creates an emply list named L 
+
+''' We can also create lists from sequences.
+Syntax: L = list(<Sequence>) '''
+print ("Lists")
+l1 = list("hello")
+print ("li: ",l1)
+print ("----------------------------")
+
+''' Similarities between Lists and Strings:
+=> Function len(L) returns the number of items (count) in the list L    - Length
+=> L[i] returns item at index i (the first item has index 0)            - Indexing
+=> L[i:j] returns a new list, containing i <= objects < j               - Slicing
+=> Concatenation (+) and Replication (*) is the same 
+=> Individual elements can be accessed by printing L[i] where i = index (starting from 0)
+
+    Differences between Lists and Strings:
+=> Mutability: Strings are immutable where as, lists are mutable. We can change individual elements
+               of a list in place. 
+               L[i] = <element> 
+''' 
+# Example showing that Lists are mutable; This is also a way to update elements in a list
+print ("Lists are mutable")
+vowels = ['a', 'e', 'i', 'o', 'u']      # list of vowels 
+print ("Original List: ", vowels)
+vowels[0] = "A"     # Assigning "A" to index 0 of list vowel 
+vowels[-4] = "E" 
+print ("List Now: ", vowels)
+print ("----------------------------")
+
+# Traversing a List 
+''' Traversing means accessing and processing each element of it. 
+The for loop makes it easy to traverse or loop over the items in a list. '''
+print ("Traversing a List")
+print ("List: ", vowels)
+print ("Starting traversal process:")
+for i in vowels:
+    print (i) 
+print ("----------------------------")
+
+# Joining Lists
+''' The concatenation operator (+), when used with two lists, joins the two lists and returns
+    the concatenated list. Note: Both operands must be of type List. 
+Also note that when l1 + l2 is concatenated, l2 is being added to l1 and therefore all the elements 
+of l2 in the new list will be AFTER the elements of l1. ''' 
+print ("Joining Lists")
+l2 = [1,2,3]
+l3 = [4,5,6,7,8]
+print ("l2+l3 = ", l2 + l3)
+print ("----------------------------")
+
+# Replicating Lists 
+''' We can use * operator to replicate a list specified number of times. 
+We can only use * operator when one operand is of type List and the other of type int. ''' 
+print ("Replication of Lists")
+print ("l2: ", l2)
+print ("l2 * 3: ", l2*3)
+print ("----------------------------")
+
+# List Slicing 
+''' Slices are the sub part of a list extracted out. We can use indexes of list elements to 
+    create list slices.
+Syntax: seq = L[start:stop:step] ''' 
+# Example
+print ("List Slicing")
+l4 = [10,11,12,13,14,15,16,17,18,19,20]
+print ("l4[0:10:2] = ", l4[0:10:2]) 
+print ("l4[2:10:3] = ", l4[2:10:3])
+print ("----------------------------")
+
+# Using Slices for List Modification 
+print ("Slicing used for Modification")
+l5 = ["one", "two", "THREE"]
+l5[0:2] = [0,1]
+print ("l5[0:2] = [0,1] is : ", l5)
+l5[0:2] = "a"
+print ("l5[0:2] = \"a\" is : ", l5)
+print ("----------------------------")
+
+# List Manipulation 
+
+# Appending elements to a List 
+''' This is used to add elements to an existing list. The append() method adds a 
+    single item to the end of the list.
+Syntax: L.append(item) ''' 
+print ("L.append()")
+print ("l4: ", l4)
+l4.append(21)
+
+colours = ["red", "yellow", "green"]
+print (colours)
+colours.append("blue")
+print (colours)
+
+''' We can also use a loop to append multiple items in a list: '''
+l6 = []
+for i in range (0,21,2):
+    l6.append(i)
+print ("l6: ", l6)
+print ("----------------------------")
+
+# Deleting Elements from a List
+''' The del statement can be used to remove an individual item, or to remove all items identified
+    by a slice 
+Syntax: del List[index]              - to remove element at an index
+        del List[<start> : <stop>]   - to remove elements in list slice 
+''' 
+print ("Deleting Elements from a List")
+list1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+print ("List1: ", list1)
+del list1[10]
+print ("List after deleting an element: ", list1)
+del list1[10:15]
+print ("List after deleting a slice: ", list1)
+print ("----------------------------")
+
+# The insert method 
+''' We can insert an element in between or at any position of our choice using insert().
+Syntax: list.insert(<pos>, <item>)  ''' 
+print ("list.insert()")
+t1 = ["a", "e", "u"]
+print ("Initial List: ", t1)
+t1.insert(2, "i")       # inserting "i" at index = 2
+print ("List after insert(): ", t1)
+print ("----------------------------")
+
+
