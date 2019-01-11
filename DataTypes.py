@@ -383,9 +383,9 @@ print ("l4: ", l4)
 l4.append(21)
 
 colours = ["red", "yellow", "green"]
-print (colours)
+print ("colours: ", colours)
 colours.append("blue")
-print (colours)
+print ("blue is appended : ", colours)
 
 ''' We can also use a loop to append multiple items in a list: '''
 l6 = []
@@ -404,9 +404,9 @@ print ("Deleting Elements from a List")
 list1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 print ("List1: ", list1)
 del list1[10]
-print ("List after deleting an element: ", list1)
+print ("List after deleting an element (10): ", list1)
 del list1[10:15]
-print ("List after deleting a slice: ", list1)
+print ("List after deleting a slice [10:15]: ", list1)
 print ("----------------------------")
 
 # The insert method 
