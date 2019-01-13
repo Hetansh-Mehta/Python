@@ -477,3 +477,109 @@ print ("list2: ", list2)
 list2.sort(reverse = True)
 print ("list2.sort(reverse = True) gives: ", list2) 
 print ("----------------------------")
+
+# ========================================================================================================
+
+# 4) Tuples 
+''' The tuples are depicted through prentheses, ie, round brackets () 
+Syntax: T = tuple() or T = () will initialize an empty tuple''' 
+
+# Example
+print ("Tuples")
+t = () 
+print ("T: ", T) 
+
+''' To construct a tuple with one element, just add a comma after the single element as shown: ''' 
+t1 = 3, 
+print ("T1: ", T1)
+
+''' Tuples can also be created from existing sequences. 
+Syntax: T = (<sequence>)    where <Sequence> can be any kind of sequence object including strings,
+                            lists and tuples. 
+''' 
+# Example
+t2 = tuple("hello_world")       # creating a tuple from a string
+print ("t2: ", t2)
+l7 = ['t', 'u', 'p', 'l', 'e']  # creating a tuple from a list
+t3 = tuple(l7)
+print ("t3: ", t3)
+
+''' We can also ask the user to input tuple elements: " 
+'''
+t4 = tuple(int(input("Enter tuple elements")))
+print ("t4: ", t4)
+print ("----------------------------")
+
+''' Tuples vs Lists: 
+
+Similarities: 
+    => len(T) returns the number of items (count) in the tuple T            - length 
+    => T[i] returns the item at index i (index starting from 0)             - indexing
+    => T[i:j] returns a sliced tuple containing objects between i and j     - slicing
+
+Differences:
+    => Tuples are immutable (just like strings) - their value cannot be change in place 
+       whereas, lists are mutable
+'''
+
+# Traversing a Tuple 
+''' Traversing a tuple means accessing and processing each element of it. The for loop makes it easy
+    to traverse or loop over the items in a tuple.
+Syntax: for <item> in <Tuple>:
+            process each item here
+'''
+print ("Traversing a tuple")
+print ("t3: ", t3)
+print ("Starting to traverse")
+for i in t3:
+    print (i)
+
+# Joining Tuples
+''' We can use the + operator to concatenate two tuples. 
+Again, both the operands need to be of type tuple. ''' 
+tpl1 = (1,3,5)
+print ("tpl1:", tpl1)
+tpl2 = (6,7,8)
+print ("tpl2: ", tpl2)
+print ("tpl1 + tpl2 = :", tpl1 + tpl2)
+print ("----------------------------")
+
+# !!!! IMPORTANT !!!! 
+''' Let's say we want to concatenate a tuple say (tpl1) with another tuple containing only one element.
+    In that case, we need to write:
+tpl1 + (3,)
+    Or else,
+    TypeError: can only concatenate tuple (not "int") to tuple
+The reason for the error is: a single value is () is treated as single value not as tuple, ie, 
+expressions (3) and ('a') are integer and strings respectively but (3,) and ('a',) are 
+single elements typles. Thus, the expression will not give an error. 
+''' 
+
+# Repeating and Replication Tuples
+''' Like strings and lists, we can use * operator to replicate a tuple specified number of times.
+We can only use an integer with a * operator when trying to replicate. 
+''' 
+print ("Replicating Tuples (*)")
+print ("tpl1 * 3 = ", tpl1 * 3)
+print ("----------------------------")
+
+# Slicing the Tuples 
+''' Tuple slices, like list-slices or string slices are the sub part of the tuple extracted out.
+Syntax: seq = T[start:stop:step]
+''' 
+print ("Tuple Slicing")
+tpl3 = (10,12,14,20,22,24,30,32,34)
+seq = tpl3[3:-3]
+print ("seq = ", seq)
+print ("----------------------------")
+
+
+# Unpacking Tuples
+''' Creating a tuple from a set of values is called packing and its reverse, ie, creating individual 
+    values from a tuple's elements is called unpacking
+Syntax: <variable1>,<variable2>,<variable3> ... = t
+
+    where the number of variables in the left side of assignment must match the number of 
+    elements in the tuple. 
+'''
+print ("unpacking tuples")
