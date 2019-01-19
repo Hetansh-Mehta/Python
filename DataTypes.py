@@ -583,3 +583,88 @@ Syntax: <variable1>,<variable2>,<variable3> ... = t
     elements in the tuple. 
 '''
 print ("unpacking tuples")
+t5 = (1,2,'A','B')      # len(t5) = 4 and therefore, there MUST be 4 variables on the left to unpack it 
+w,x,y,z = t
+print (w, "-", x, "-", y, "-", z)
+print ("----------------------------")
+
+# The len() method 
+''' The len() method returns the length of the tuple, ie, the number of elements in the tuple. 
+Syntax: len(<tuple>)
+'''
+print ("len(<tuple>)")
+print ("len(t1): ", len(t1))
+print ("len(t): ", len(t))
+print ("----------------------------")
+
+# The max() method 
+''' This method returns the element from the tuple having maximum value. (the max value in the tuple)
+Syntax: max(<tuple>)
+'''
+print ("The max() method")
+print ("tpl3: ", tpl3)
+print ("max(tpl3): ", max(tpl3))
+print ("tpl1 + tpl2 = :", tpl1 + tpl2)
+print ("max(tpl1+tpl2): ", max(tpl1+tpl2))
+print ("----------------------------")
+
+# The min() method 
+''' This method returns the element from the tuple having minimum value (the min value in the tuple)
+Syntax: min(<tuple>)
+'''
+print ("The min() method")
+print ("tpl3: ", tpl3)
+print ("max(tpl3): ", min(tpl3))
+print ("tpl1 + tpl2 = :", tpl1 + tpl2)
+print ("max(tpl1+tpl2): ", min(tpl1+tpl2))
+print ("----------------------------")
+
+# The cmp() method 
+''' This method is used to compare two tuples based on thier elements. 
+Syntax: cmp(tuple1, tuple2)
+    This method returns an integer as per:
+=> returns 0 if both tuples are equal 
+=> returns -1 if tuple1 < tuple2 
+=> returns 1 if tuple1 > tuple2
+    In case the tuples contain string, thein their corresponding ASCII equivalent is compared and corresponding 
+    integer is returned.
+'''
+print ("The cmp() method")
+tpl4 = (2,4,6,8)
+tpl5 = ("2","4","6","8") 
+tpl6 = ([2], [3], [4], [5])
+tpl7 = (2,4,6,8) 
+print ("cmp(tpl4, tpl5): ", cmp(tpl4, tpl5))
+print ("cmp(tpl5, tpl6): ", cmp(tpl5, tpl6))
+print ("cmp(tpl4, tpl7): ", cmp(tpl4, tpl7))
+print ("----------------------------")
+
+# ========================================================================================================
+
+# 5) Dictionaries in Python 
+''' Python dictionaries are a collection of some key-value pairs. Dictonaries are:
+=> mutable
+=> unordered collections of elements in key:value pairs that associate keys to values. 
+''' 
+
+# Creating a Dictionary 
+''' To create a dictionary, we need to include the key:value pairs in curly braces.
+Syntax: <dictionary_name> = {<key>:<value>, <key>:<value>, .... , <key>:<value>}
+'''
+# Example 
+teachers = {"Benjamin":"Physics", "Paul":"Chemistry", "Karen":"Mathematics", "Mohammed":"Legal Studies"}
+
+''' Notice that: 
+=> The curly brackets mark the beginnning and the end of the dictionary 
+=> Each entry (key:value) consists of a pair separated by a comma 
+=> The key and corresponding value is given by writing colon(:) between them
+'''
+# !!! Imp !!! => Dictionaries are indexed on the basis of keys 
+
+# Accessing Elements of a Dictionary
+''' In dictionaries, elements are accessed throught the keys defined in the key:value pairs.
+Syntax: <dictionary_name> [<key>]
+    Attempting to access a key that doesn't exist causes an error. 
+The elements (key:value) pairs are unordered; one cannot access elements as per specific order. 
+'''
+
