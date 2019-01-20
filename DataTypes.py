@@ -487,11 +487,11 @@ Syntax: T = tuple() or T = () will initialize an empty tuple'''
 # Example
 print ("Tuples")
 t = () 
-print ("T: ", T) 
+print ("t: ", t) 
 
 ''' To construct a tuple with one element, just add a comma after the single element as shown: ''' 
 t1 = 3, 
-print ("T1: ", T1)
+print ("T1: ", t1)
 
 ''' Tuples can also be created from existing sequences. 
 Syntax: T = (<sequence>)    where <Sequence> can be any kind of sequence object including strings,
@@ -506,7 +506,11 @@ print ("t3: ", t3)
 
 ''' We can also ask the user to input tuple elements: " 
 '''
-t4 = tuple(int(input("Enter tuple elements")))
+t4 = ()
+n = int(input("Enter the number of elements: "))
+for i in range(n):
+    element = int(input("Enter element: ")) 
+    t4 + (element,)
 print ("t4: ", t4)
 print ("----------------------------")
 
@@ -584,7 +588,7 @@ Syntax: <variable1>,<variable2>,<variable3> ... = t
 '''
 print ("unpacking tuples")
 t5 = (1,2,'A','B')      # len(t5) = 4 and therefore, there MUST be 4 variables on the left to unpack it 
-w,x,y,z = t
+w,x,y,z = t5
 print (w, "-", x, "-", y, "-", z)
 print ("----------------------------")
 
@@ -619,26 +623,6 @@ print ("tpl1 + tpl2 = :", tpl1 + tpl2)
 print ("max(tpl1+tpl2): ", min(tpl1+tpl2))
 print ("----------------------------")
 
-# The cmp() method 
-''' This method is used to compare two tuples based on thier elements. 
-Syntax: cmp(tuple1, tuple2)
-    This method returns an integer as per:
-=> returns 0 if both tuples are equal 
-=> returns -1 if tuple1 < tuple2 
-=> returns 1 if tuple1 > tuple2
-    In case the tuples contain string, thein their corresponding ASCII equivalent is compared and corresponding 
-    integer is returned.
-'''
-print ("The cmp() method")
-tpl4 = (2,4,6,8)
-tpl5 = ("2","4","6","8") 
-tpl6 = ([2], [3], [4], [5])
-tpl7 = (2,4,6,8) 
-print ("cmp(tpl4, tpl5): ", cmp(tpl4, tpl5))
-print ("cmp(tpl5, tpl6): ", cmp(tpl5, tpl6))
-print ("cmp(tpl4, tpl7): ", cmp(tpl4, tpl7))
-print ("----------------------------")
-
 # ========================================================================================================
 
 # 5) Dictionaries in Python 
@@ -667,4 +651,181 @@ Syntax: <dictionary_name> [<key>]
     Attempting to access a key that doesn't exist causes an error. 
 The elements (key:value) pairs are unordered; one cannot access elements as per specific order. 
 '''
+print ("Accessing Elements of a Dictionary")
+print ("teachers[\"Karen\"): ", teachers["Karen"])
+print ("teachers[\"Paul\"): ", teachers["Paul"])
+print ("----------------------------") 
+
+
+# Accessing Keys or Values Simultaneously 
+''' To see all the keys in a dictionary in one go, we may write: <dictionary>.keys()
+    To see all the values in a dictionary in one go, we may write: <dictionary>.values() 
+The keys() method returns a LIST of all the keys present in the dictionary. 
+The values() method returns a LIST of all the values present in the dictionary.
+'''
+print ("Accessing Keys or Values Simultaneously")
+vowel_dict = {"Vowel1":"a", "Vowel2":"e", "Vowel3":"i", "Vowel4":"o", "Vowel5":"u"}
+print ("Vowel_dict: ", vowel_dict)
+print ("vowel_dict.keys(): ", vowel_dict.keys())
+print ("vowel_dict.values(): ", vowel_dict.values())
+print ("teachers.keys(): ", teachers.keys())            # RETURNS A LIST OF ALL THE KEYS 
+print ("teachers.values(): ", teachers.values())        # RETURNS A LIST OF ALL THE VALUES 
+print ("----------------------------")
+
+# Characteristics of a Dictionary 
+''' 
+=> Dictionaries are mutable : we can change the value of a certain key in place using the assignment statement
+   Syntax: <dictionary>[<key>] = <value> 
+=> Unordered set of key:value pairs
+=> Unlike the string, list and tuple, a dictionary is not a sequence because it is unordered set of elements
+=> Dictionaries are indexed by keys and its keys must be of any non-mutable type 
+=> Each of the keys within a dictionary must be unique 
+''' 
+
+# Traversing a Dictionary
+''' Traversal of a collection means accessing and processing each element of it. The for loop makes it easy 
+    to traverse or loop over the items in a dictionary.
+Syntax: for <item> in <dictionary>:
+            process each item here
+'''
+print ("Traversing a Dictionary")
+print ("teachers: ", teachers)
+print ("traversing teachers: ")
+for key in teachers:
+    print (key, ":", teachers[key])         # print key : value 
+print ("vowel_dict: ", vowel_dict)
+print ("traversing vowel_dict")
+for key in vowel_dict:
+    print (key, ":", vowel_dict[key])
+print ("----------------------------")
+
+# Adding Elements in a Dictionary 
+''' We can add new elements (key:value pairs) to a dictionary using assignment operator.
+Syntax: <dictionary>[<key>] = <value> 
+    BUT the key being added must not exist in dictionary and must be unique. 
+    If the key already exists, then this statement will change the value of existing key and no new entry will be added.
+'''
+print ("Adding elements to a Dictionary")
+employee_dict = {"name":"John", "salary":10000, "age":24}
+print ("employee_dict: ", employee_dict)
+employee_dict["dept"] = "Sales"
+print ("employee_dict: ", employee_dict)
+print ("----------------------------")
+
+
+# Write a program to create a dictionary containing names of competition winner students as keys 
+# and number of their wins as values 
+
+n = int(input("How mane students: "))
+CompWinners = {}    # Empty Dict 
+for a in range (n): 
+    key = input("Enter name of student: ")
+    value = int(input("Number of competitions won: "))
+    CompWinners[key] = value
+print ("CompWinners: ", CompWinners)
+print ("----------------------------")
+
+# Deleting elements from a dictionary
+''' 
+=> To delete an element (key:value pair), we can use the del command. 
+Syntax: del <dictionary>[<key>] 
+    With del statements, the key that we are giving MUST exist in the dictionary, otherwise Python will return an error. 
+
+=> Another method to delete elements from dict is by using pop() method.
+Syntax: <dictionary>.pop(<key>) 
+    The pop method will not only delete the key:value pair for the mentioned key but will also return the corresponding value. 
+    pop() method also allows us to specify what to display when the given key does not exist :
+Syntax: <dictionary>.pop(<new key>, "Not Found")
+''' 
+print ("Deleting elements from a dict")
+print ("employee_dict: ", employee_dict) 
+del employee_dict["age"] 
+print ("employee_dict: ", employee_dict)
+
+print ("teachers: ", teachers) 
+teachers.pop("Karen")
+print ("teachers: ", teachers)
+teachers.pop("Hetansh", "Not Found") 
+print ("teachers: ", teachers)
+print ("----------------------------") 
+
+# Checking for Existence of a Key 
+''' 
+Syntax: <key> in <dictionary>           returns True is key is present, otherwise False
+        <key> not in <dictionary>       returns True is key is absent, otherwise False 
+''' 
+print ("Checking for existance of a key") 
+emp1 = {"salary":10000, "name":"John", "age":29}
+print ("emp1: ", emp1) 
+print ("\'age\' in emp1: ", 'age' in emp1)      # True 
+print ("\"John\" in emp1: ", "John" in emp1)    # False
+print ("----------------------------")  
+
+# The len() method 
+''' The len() method returns the length of the dictionary, ie, the count of elements (key:value pairs) 
+    in the dictionary. 
+Syntax: len(<dictionary>)
+'''
+print ("The len() method")
+print ("vowel_dict: ", vowel_dict) 
+print ("len(vowel_dict): ", len(vowel_dict))
+print ("----------------------------")  
+
+# The clear() method 
+''' This method removes all items from the dictionary and the dictionary becomes empty post this method. 
+Syntax: <dictionary>.clear() 
+'''
+print ("The clear() method") 
+print ("emp1: ", emp1)  
+print ("emp1.clear() : ", emp1.clear()) 
+print ("----------------------------")  
+
+# The get() method 
+''' With this method, we can get the item with the given key, similar to <dictionary>[<key>] 
+    If the key is not present, python by default will give error, but we can specify our own message 
+    through default argument. 
+Syntax: <dictionary>.get(key, [default]) 
+'''
+print ("The get() method") 
+print ("employee_dict: ", employee_dict)
+print ("employee_dict.get(\"salary\"): ", employee_dict.get("salary")) 
+print ("employee_dict.get(\"desig\"): ", employee_dict.get("desig", "Error, Key not found !")) 
+print ("----------------------------")  
+ 
+
+# The items() method 
+''' This method returns all of the items in the dictionary as a sequence of (key, value) tuples, in no particular order 
+Syntax: <dictionary>.items() 
+'''
+print ("The items() method") 
+print ("employee_dict: ", employee_dict)
+print ("employee_dict.items(): ", employee_dict.items())
+print ("vowel_dict: ", vowel_dict) 
+print ("vowel_dict.items(): ", vowel_dict.items())
+print ("----------------------------")   
+
+# The update() method 
+''' This method merges key:value pairs from the new dictionary into the original dictionary, 
+    adding or replacing as needed. The items in the new dictionary are added to the old one 
+    and override any items already there with the same keys. 
+Syntax: <dictionary>.update(<other-dictionary)
+''' 
+print ("The update() method")
+print ("employee_dict: ", employee_dict)
+print ("vowel_dict: ", vowel_dict) 
+print ("vowel_dict.update(employee_dict): ", vowel_dict.update(employee_dict))
+print ("----------------------------")   
+
+# ========================================================================================================
+
+# Write a program that reads a string and checks if it is a palindrome 
+
+string3 = input ("Enter a string: ") 
+if string3[::] == string3[::-1]:
+    print ("string is palindrome")
+else:
+    print ("string is not a palindrome")
+
+# ========================================================================================================
+
 
